@@ -21,7 +21,7 @@ while 1
 
     brick.MoveMotor('AB', 80);
     
-    if (touched)
+    if (touched && count < 3)
         brick.StopMotor('AB');
         brick.MoveMotor('AB', -70);
         pause(1);
@@ -37,7 +37,7 @@ while 1
         brick.StopMotor('AB');
         brick.MoveMotor('AB', -70);
         pause(1);
-        brick.MoveMotorAngleAbs('A', 60, -90);
+        brick.MoveMotorAngleRel('A', 60, 150);
         brick.WaitForMotor('A');
         brick.MoveMotor('AB', 80);
         count = count+1;
@@ -47,7 +47,7 @@ while 1
         brick.StopMotor('AB');
         brick.MoveMotor('AB', -70);
         pause(1);
-        brick.MoveMotorAngleAbs('A', 60, -90);
+        brick.MoveMotorAngleRel('A', 60, 150);
         brick.WaitForMotor('A');
         brick.MoveMotor('AB', 80);
         count = count+1;
