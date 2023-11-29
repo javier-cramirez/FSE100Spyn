@@ -33,12 +33,21 @@ while 1
         count = count+1;
     end
 
-    if count >= 3
+    if count == 3
         brick.StopMotor('AB');
         brick.MoveMotor('AB', -70);
         pause(1);
+        brick.MoveMotorAngleAbs('A', 60, -90);
+        brick.WaitForMotor('A');
+        brick.MoveMotor('AB', 80);
+        count = count+1;
+    end
+
+    if count == 4
         brick.StopMotor('AB');
-        brick.MoveMotorAngleAbs('A', 60, 90);
+        brick.MoveMotor('AB', -70);
+        pause(1);
+        brick.MoveMotorAngleAbs('A', 60, -90);
         brick.WaitForMotor('A');
         brick.MoveMotor('AB', 80);
         count = count+1;
