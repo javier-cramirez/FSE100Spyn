@@ -27,9 +27,11 @@ while 1
         brick.StopMotor('AB');
         brick.MoveMotorAngleRel('B', 60, 150);
         brick.WaitForMotor('B');
+        dist = brick.UltrasonicDist(1);
+
         brick.MoveMotor('AB', 60);
 
-        if dist > 4
+        if dist > 6
             pause(1);
             brick.MoveMotorAngleRel('A', 55, 90);
             brick.WaitForMotor('A');
