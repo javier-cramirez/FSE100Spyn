@@ -19,6 +19,11 @@ while 1
         pause(3);
     end
 
+    if color == 5
+        brick.StopAllMotors();
+        pause(1);
+    end
+    
     brick.MoveMotor('AB', 80);
     
     if (touched && count < 3)
@@ -37,6 +42,7 @@ while 1
         brick.StopMotor('AB');
         brick.MoveMotor('AB', -70);
         pause(1);
+        brick.StopMotor('AB');
         brick.MoveMotorAngleRel('A', 60, 150);
         brick.WaitForMotor('A');
         brick.MoveMotor('AB', 80);
@@ -47,6 +53,7 @@ while 1
         brick.StopMotor('AB');
         brick.MoveMotor('AB', -70);
         pause(1);
+        brick.StopMotor('AB');
         brick.MoveMotorAngleRel('A', 60, 150);
         brick.WaitForMotor('A');
         brick.MoveMotor('AB', 80);
