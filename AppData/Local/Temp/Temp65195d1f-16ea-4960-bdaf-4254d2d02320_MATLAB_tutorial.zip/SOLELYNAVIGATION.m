@@ -20,7 +20,7 @@ while 1
 
     brick.MoveMotor('AB', 60);
     
-    if touched 
+    if (touched && dist < 12)
         brick.StopMotor('AB');
         brick.MoveMotor('AB', -60);
         pause(1);
@@ -28,15 +28,14 @@ while 1
         brick.MoveMotorAngleRel('B', 60, 150);
         brick.WaitForMotor('B');
 
-        brick.MoveMotor('AB', 60);
+        brick.MoveMotor('AB', 60); 
+    end
 
-        if touched 
+    if (touched && dist > 12)
             brick.StopMotor('AB');
             brick.MoveMotorAngleRel('A', 55, 90);
             brick.WaitForMotor('A');
             brick.MoveMotor('AB', 60);
-        end
- 
     end
 
 
