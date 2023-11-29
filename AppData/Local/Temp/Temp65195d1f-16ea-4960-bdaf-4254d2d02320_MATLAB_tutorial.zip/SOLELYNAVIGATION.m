@@ -10,7 +10,7 @@ while 1
     % TURN LEFT
     brick.MoveMotor('AB', 60);
 
-    if (color == 4 || color == 5 || color == 3 && color ~= 1 && color ~=0)
+    if (color == 4 || color == 2 || color == 3 && color ~= 1 && color ~=0)
         brick.beep();
         brick.StopMotor('AB');
         run('keycontrol.m');
@@ -28,6 +28,15 @@ while 1
         brick.MoveMotorAngleRel('B', 60, 150);
         brick.WaitForMotor('B');
         brick.MoveMotor('AB', 60);
+
+        if dist > 4
+            pause(1);
+            brick.MoveMotorAngleRel('A', 55, 90);
+            brick.WaitForMotor('A');
+            pause(2);
+            brick.MoveMotor('AB', 60);
+        end
+ 
     end
 
 
